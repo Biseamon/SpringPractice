@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="testBean"
-          class="com.mypractice.springcourse.TestBean">
-        <constructor-arg value="Marin"/>
-        <constructor-arg value="1"/>
+    <context:component-scan base-package="com.mypractice.springcourse"/>
 
-    </bean>
+    <!--<context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+    <!---->
 
-    <bean id="musicBean"
-        class="com.mypractice.springcourse.RockMusic">
+    <!--<bean id="musicBean"-->
+        <!--class="com.mypractice.springcourse.ClassicMusic"-->
+          <!--scope="prototype"-->
+            <!--init-method="doInit"-->
+            <!--destroy-method="doDestroy"-->
+            <!--factory-method="getNewObj">-->
+    <!--</bean>-->
 
-    </bean>
+    <!--<bean id="testBean"-->
+          <!--class="com.mypractice.springcourse.TestBean">-->
+        <!--<constructor-arg value="Marin"/>-->
+        <!--<constructor-arg value="1"/>-->
+    <!--</bean>-->
 
-    <bean id="musicPlayer"
-        class="com.mypractice.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean"></constructor-arg>
-    </bean>
+    <!--<bean id="musicBean1"-->
+        <!--class="com.mypractice.springcourse.ClassicMusic">-->
+    <!--</bean>-->
+    <!--<bean id="musicBean2"-->
+          <!--class="com.mypractice.springcourse.RockMusic">-->
+    <!--</bean>-->
+    <!--<bean id="musicBean3"-->
+          <!--class="com.mypractice.springcourse.RapMusic">-->
+    <!--</bean>-->
+
+
+    <!--<bean id="musicPlayer"-->
+        <!--class="com.mypractice.springcourse.MusicPlayer"-->
+        <!--scope="prototype">-->
+        <!--&lt;!&ndash;We also can add a Singleton scope&ndash;&gt;-->
+
+        <!--<property name="musicList">-->
+            <!--<list>-->
+                    <!--<ref bean="musicBean1"/>-->
+                    <!--<ref bean="musicBean2"/>-->
+                    <!--<ref bean="musicBean3"/>-->
+            <!--</list>-->
+        <!--</property>-->
+
+
+       <!--&lt;!&ndash; <property name="music" ref="musicBean1"/>&ndash;&gt;-->
+        <!--<property name="name" value="Guns n Roses"/>-->
+        <!--<property name="volume" value="7"/>-->
+        <!--<property name="origin" value="${musicPlayer.origin}"/>-->
+        <!--<property name="copiesSold" value="${musicPlayer.copiesSold}"/>-->
+       <!--&lt;!&ndash; <constructor-arg ref="musicBean"></constructor-arg>&ndash;&gt;-->
+    <!--</bean>-->
 
 </beans>
